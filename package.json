@@ -1,0 +1,19 @@
+{
+  "name": "proportions-viewer",
+  "version": "0.1.0",
+  "description": "Simple proportions viewer",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/fhightower/proportions-viewer",
+  "keywords": [
+    "proportions",
+    "aspect ratio"
+  ],
+  "author": "Floyd Hightower",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "~1.7.8"
+  }
+}
