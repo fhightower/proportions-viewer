@@ -3,17 +3,21 @@
   <head>
     <meta charset="UTF-8">
     <title>Proportions Viewer</title>
+
+    <script src="./viewer.js"></script>
   </head>
   <body>
     <h1>Proportions Viewer!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+    <label for="height">Height</label><input id="height" type="text" onkeyup="updateView()">
+    <br>
+    <label for="width">Width</label><input id="width" type="text" onkeyup="updateView()">
+
+    <canvas id="myCanvas" style="border: 1px black; border-style: solid; margin-top: 3em; width: 100%;">
+    </canvas>
 
     <script>
       // You can also require other files to run in this process
-      require('./renderer.js')
+      require('./renderer.js');
     </script>
   </body>
 </html>
