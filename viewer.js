@@ -21,7 +21,7 @@ function updateView() {
             width = potentialValue;
             height = canvas.height;
         }
-    } else if (width > height) {
+    } else {
         potentialValue = (height * canvas.width) / width;
 
         // if the potential value is too large, use the other dimension to set the size of the rectangle
@@ -36,6 +36,9 @@ function updateView() {
 
     // clear the current contents of the canvas
     context.clearRect(0, 0, canvas.width, canvas.height);
+
+    // set the color of the rectangle
+    context.fillStyle="#222222";
 
     // update the rectangle
     context.fillRect(0, 0, width, height);
