@@ -2,7 +2,9 @@ function updateView() {
     /* Update the view to show a box of the given dimensions. */
     // get the height and width
     var height = document.getElementById("height").value;
+    var originalHeight = height;
     var width = document.getElementById("width").value;
+    var originalWidth = width;
 
     // declare variables
     var canvas = document.getElementById('myCanvas');
@@ -42,4 +44,9 @@ function updateView() {
 
     // update the rectangle
     context.fillRect(0, 0, width, height);
+
+    // add text showing the ratio
+    context.fillStyle="#ffffff";
+    // context.font = "0.5em Arial";
+    context.fillText(originalHeight + " x " + originalWidth, 10, 10);
 }
