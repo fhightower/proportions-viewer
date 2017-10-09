@@ -10,16 +10,18 @@ function updateView() {
     var canvas = document.getElementById('myCanvas');
     var context = canvas.getContext("2d");
 
-    // simplify the terms (try using a simple method)
-    var potentialValue;
+    // maximize the size of the rectangle to the max available space on the screen
+    var potentialValue, ratioText;
     if (height > width) {
         potentialValue = (width * canvas.height) / height;
 
         // if the potential value is too large, use the other dimension to set the size of the rectangle
         if (potentialValue > canvas.width) {
+            ratioText = "1:" + String(width / height);
             height = (height * canvas.width) / width;
             width = canvas.width;
         } else {
+            ratioText = "1:" + String(height / width);
             width = potentialValue;
             height = canvas.height;
         }
@@ -28,9 +30,11 @@ function updateView() {
 
         // if the potential value is too large, use the other dimension to set the size of the rectangle
         if (potentialValue > canvas.height) {
+            ratioText = "1:" + String(width / height);
             width = (width * canvas.height) / height;
             height = canvas.height;
         } else {
+            ratioText = String(width / height) + ":1";
             height = potentialValue;
             width = canvas.width;
         }
@@ -48,5 +52,5 @@ function updateView() {
     // add text showing the ratio
     context.fillStyle="#ffffff";
     // context.font = "0.5em Arial";
-    context.fillText(originalHeight + " x " + originalWidth, 10, 10);
+    context.fillText(ratioText, 10, 10);
 }
